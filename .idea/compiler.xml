@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="sfm_projekt" />
         <module name="SFM_projekt" />
         <module name="projekt" />
         <module name="SFM_projekt2" />
