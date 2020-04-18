@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="SFM_projekt" />
         <module name="projekt" />
+        <module name="SFM_projekt2" />
       </profile>
     </annotationProcessing>
   </component>
