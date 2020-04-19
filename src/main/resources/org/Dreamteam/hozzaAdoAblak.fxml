@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="335.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.Dreamteam.hozzaAdoController">
+   <children>
+      <TextField fx:id="typeField" layoutX="288.0" layoutY="22.0" />
+      <TextField fx:id="titleField" layoutX="288.0" layoutY="62.0" />
+      <TextField fx:id="seasonNumber" layoutX="288.0" layoutY="104.0" />
+      <TextField fx:id="episodeNumber" layoutX="288.0" layoutY="143.0" />
+      <TextField fx:id="favoriteField" layoutX="288.0" layoutY="184.0" />
+      <TextField fx:id="wlaterField" layoutX="288.0" layoutY="227.0" />
+      <Label layoutX="112.0" layoutY="26.0" text="Tipus" />
+      <Label layoutX="112.0" layoutY="66.0" text="Cim" />
+      <Label layoutX="112.0" layoutY="108.0" text="Evadok szama" />
+      <Label layoutX="112.0" layoutY="147.0" text="Reszek szama" />
+      <Label layoutX="112.0" layoutY="188.0" text="Kedvenc" />
+      <Label layoutX="112.0" layoutY="231.0" text="Megnezendo" />
+      <Button layoutX="210.0" layoutY="276.0" mnemonicParsing="false" onAction="#hozzaAd" text="Hozzaad" />
+   </children>
+</AnchorPane>

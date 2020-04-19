@@ -6,7 +6,7 @@
 
 <VBox alignment="CENTER" prefHeight="448.0" prefWidth="567.0" spacing="20.0" xmlns="http://javafx.com/javafx/10.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.Dreamteam.SecondaryController">
     <children>
-        <Button text="Hozzáad" />
+        <Button text="Hozzáad" onAction="#hozzaAdAblak"/>
         <Button mnemonicParsing="false" text="Vissza" onAction="#switchToPrimary"/>
     </children>
     <padding>
