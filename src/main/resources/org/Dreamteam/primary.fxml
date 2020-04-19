@@ -7,21 +7,33 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="595.0" prefWidth="849.0" spacing="20.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.Dreamteam.PrimaryController">
+<VBox alignment="CENTER" prefHeight="555.0" prefWidth="829.0" spacing="20.0" styleClass="body" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.Dreamteam.PrimaryController">
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>
    <children>
-      <AnchorPane prefHeight="524.0" prefWidth="684.0" styleClass="body" stylesheets="@style.css">
+      <Label alignment="TOP_CENTER" contentDisplay="RIGHT" prefHeight="26.0" prefWidth="324.0" text="Cím" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <AnchorPane prefHeight="405.0" prefWidth="790.0">
          <children>
-            <Button contentDisplay="BOTTOM" layoutX="70.0" layoutY="63.0" mnemonicParsing="false" text="Kedvencek" />
-            <Button layoutX="367.0" layoutY="63.0" mnemonicParsing="false" text="Összes film" />
-            <Button layoutX="620.0" layoutY="63.0" mnemonicParsing="false" text="Megnézendő" />
-            <Label alignment="TOP_CENTER" contentDisplay="RIGHT" layoutX="243.0" layoutY="7.0" prefHeight="35.0" prefWidth="324.0" text="Cím" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS">
+            <Button contentDisplay="BOTTOM" layoutX="570.0" layoutY="102.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="198.0" styleClass="gomb" stylesheets="@style.css" text="Kedvencek" textFill="WHITE">
                <font>
-                  <Font size="24.0" />
+                  <Font size="18.0" />
                </font>
-            </Label>
+            </Button>
+            <Button layoutX="570.0" layoutY="163.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="198.0" styleClass="gomb" stylesheets="@style.css" text="Megnézendő" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="570.0" layoutY="39.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="198.0" styleClass="gomb" stylesheets="@style.css" text="Összes film" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>

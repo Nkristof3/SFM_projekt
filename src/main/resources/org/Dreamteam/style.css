@@ -1,3 +1,10 @@
-body {
-  background-image: url("15076052.jpg");
+.body {
+ -fx-background-image: url("15076052.jpg");
+ -fx-background-size: 100% 100%
+}
+.gomb{
+    -fx-background-color: red;
+}
+.cim{
+    -fx-background-color:LightGray ;
 }
