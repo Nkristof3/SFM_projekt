@@ -19,17 +19,17 @@
       </Label>
       <AnchorPane prefHeight="405.0" prefWidth="790.0">
          <children>
-            <Button contentDisplay="BOTTOM" layoutX="570.0" layoutY="102.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="198.0" styleClass="gomb" stylesheets="@style.css" text="Kedvencek" textFill="WHITE">
+            <Button contentDisplay="BOTTOM" layoutX="570.0" layoutY="102.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="198.0" styleClass="gomb" stylesheets="@style.css" text="Kedvencek" textFill="WHITE" onAction="#switchToKedvencek">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button layoutX="570.0" layoutY="163.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="198.0" styleClass="gomb" stylesheets="@style.css" text="Megnézendő" textFill="WHITE">
+            <Button layoutX="570.0" layoutY="163.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="198.0" styleClass="gomb" stylesheets="@style.css" text="Megnézendő" textFill="WHITE" onAction="#switchToMegnezendo">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button layoutX="570.0" layoutY="39.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="198.0" styleClass="gomb" stylesheets="@style.css" text="Összes film" textFill="WHITE">
+            <Button layoutX="570.0" layoutY="39.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="198.0" styleClass="gomb" stylesheets="@style.css" text="Összes film" textFill="WHITE" onAction="#switchToSecondary">
                <font>
                   <Font size="18.0" />
                </font>

@@ -6,9 +6,9 @@
 
 <VBox alignment="CENTER" prefHeight="448.0" prefWidth="567.0" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.Dreamteam.SecondaryController">
     <children>
-        <Button fx:id="secondaryButton" onAction="#switchToPrimary" text="Hozzáadd" />
-      <Button mnemonicParsing="false" text="Kezdő lap" />
-      <Button mnemonicParsing="false" text="Sorozat" />
+        <Button fx:id="secondaryButton" text="Hozzáad" onAction="#hozzaAdAblak"/>
+        <Button mnemonicParsing="false" text="Kezdőlap" onAction="#switchToPrimary"/>
+        <Button mnemonicParsing="false" text="Sorozat" />
     </children>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
