@@ -14,6 +14,11 @@
      -fx-background-size: 100% 100%
 }
 
-.gomb2{
-    -fx-background-color: white;
+.kedvencek {
+ -fx-background-image: url("682.png");
+ -fx-background-size: 100% 100%
+}
+.megnezendo {
+ -fx-background-image: url("megnez.jpg");
+ -fx-background-size: 100% 100%
 }
