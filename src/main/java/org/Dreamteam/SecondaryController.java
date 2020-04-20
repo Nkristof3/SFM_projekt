@@ -24,6 +24,36 @@ import javafx.stage.Stage;
 public class SecondaryController implements Initializable {
 
 
+    public void tableSetup(String sql){
+        ConnectDB connectionClass = new ConnectDB();
+        Connection connection = connectionClass.getConnection();
+
+        lista = FXCollections.observableArrayList();
+        try {
+            ResultSet vissza = connection.createStatement().executeQuery(sql);
+
+            while(vissza.next()){
+                Film film = new Film();
+                film.setTipus(vissza.getString("tipus"));
+                film.setCim(vissza.getString("cim"));
+                film.setReszek(vissza.getInt("reszek"));
+                film.setEvadok(vissza.getInt("evadok"));
+                film.setKedvenc(vissza.getString("kedvenc"));
+                film.setMegnezendo(vissza.getString("megnezendo"));
+                lista.add(film);
+            }
+        } catch (Exception e) {
+            e.getMessage();
+        }
+        tipusOszlop.setCellValueFactory(new PropertyValueFactory<>("tipus"));
+        cimOszlop.setCellValueFactory(new PropertyValueFactory<>("cim"));
+        reszOszlop.setCellValueFactory(new PropertyValueFactory<>("reszek"));
+        evadOszlop.setCellValueFactory(new PropertyValueFactory<>("evadok"));
+        kedvencOszlop.setCellValueFactory(new PropertyValueFactory<>("kedvenc"));
+        megnezendoOszlop.setCellValueFactory(new PropertyValueFactory<>("megnezendo"));
+
+        filmTable.setItems(lista);
+    }
 
     @FXML
     private void switchToPrimary() throws IOException {
@@ -62,98 +92,14 @@ public class SecondaryController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ConnectDB connectionClass = new ConnectDB();
-        Connection connection = connectionClass.getConnection();
-
-        lista = FXCollections.observableArrayList();
-        String sql = "select * from film where Tipus = 'Film'";
-        try {
-            ResultSet vissza = connection.createStatement().executeQuery(sql);
-
-            while(vissza.next()){
-                Film film = new Film();
-                film.setTipus(vissza.getString("tipus"));
-                film.setCim(vissza.getString("cim"));
-                film.setReszek(vissza.getInt("reszek"));
-                film.setEvadok(vissza.getInt("evadok"));
-                film.setKedvenc(vissza.getString("kedvenc"));
-                film.setMegnezendo(vissza.getString("megnezendo"));
-                lista.add(film);
-            }
-        } catch (Exception e) {
-            e.getMessage();
-        }
-        tipusOszlop.setCellValueFactory(new PropertyValueFactory<>("tipus"));
-        cimOszlop.setCellValueFactory(new PropertyValueFactory<>("cim"));
-        reszOszlop.setCellValueFactory(new PropertyValueFactory<>("reszek"));
-        evadOszlop.setCellValueFactory(new PropertyValueFactory<>("evadok"));
-        kedvencOszlop.setCellValueFactory(new PropertyValueFactory<>("kedvenc"));
-        megnezendoOszlop.setCellValueFactory(new PropertyValueFactory<>("megnezendo"));
-
-        filmTable.setItems(lista);
+        tableSetup("select * from film where Tipus = 'Film'");
     }
 
     public void sorozat() {
-        ConnectDB connectionClass = new ConnectDB();
-        Connection connection = connectionClass.getConnection();
-
-        lista = FXCollections.observableArrayList();
-        String sql = "select * from film where Tipus = 'Sorozat'";
-        try {
-            ResultSet vissza = connection.createStatement().executeQuery(sql);
-
-            while(vissza.next()){
-                Film film = new Film();
-                film.setTipus(vissza.getString("tipus"));
-                film.setCim(vissza.getString("cim"));
-                film.setReszek(vissza.getInt("reszek"));
-                film.setEvadok(vissza.getInt("evadok"));
-                film.setKedvenc(vissza.getString("kedvenc"));
-                film.setMegnezendo(vissza.getString("megnezendo"));
-                lista.add(film);
-            }
-        } catch (Exception e) {
-            e.getMessage();
-        }
-        tipusOszlop.setCellValueFactory(new PropertyValueFactory<>("tipus"));
-        cimOszlop.setCellValueFactory(new PropertyValueFactory<>("cim"));
-        reszOszlop.setCellValueFactory(new PropertyValueFactory<>("reszek"));
-        evadOszlop.setCellValueFactory(new PropertyValueFactory<>("evadok"));
-        kedvencOszlop.setCellValueFactory(new PropertyValueFactory<>("kedvenc"));
-        megnezendoOszlop.setCellValueFactory(new PropertyValueFactory<>("megnezendo"));
-
-        filmTable.setItems(lista);
+        tableSetup("select * from film where Tipus = 'Sorozat'");
     }
 
     public void film() {
-        ConnectDB connectionClass = new ConnectDB();
-        Connection connection = connectionClass.getConnection();
-
-        lista = FXCollections.observableArrayList();
-        String sql = "select * from film where Tipus = 'Film'";
-        try {
-            ResultSet vissza = connection.createStatement().executeQuery(sql);
-
-            while(vissza.next()){
-                Film film = new Film();
-                film.setTipus(vissza.getString("tipus"));
-                film.setCim(vissza.getString("cim"));
-                film.setReszek(vissza.getInt("reszek"));
-                film.setEvadok(vissza.getInt("evadok"));
-                film.setKedvenc(vissza.getString("kedvenc"));
-                film.setMegnezendo(vissza.getString("megnezendo"));
-                lista.add(film);
-            }
-        } catch (Exception e) {
-            e.getMessage();
-        }
-        tipusOszlop.setCellValueFactory(new PropertyValueFactory<>("tipus"));
-        cimOszlop.setCellValueFactory(new PropertyValueFactory<>("cim"));
-        reszOszlop.setCellValueFactory(new PropertyValueFactory<>("reszek"));
-        evadOszlop.setCellValueFactory(new PropertyValueFactory<>("evadok"));
-        kedvencOszlop.setCellValueFactory(new PropertyValueFactory<>("kedvenc"));
-        megnezendoOszlop.setCellValueFactory(new PropertyValueFactory<>("megnezendo"));
-
-        filmTable.setItems(lista);
+        tableSetup("select * from film where Tipus = 'Film'");
     }
 }
