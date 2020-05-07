@@ -22,3 +22,19 @@
  -fx-background-image: url("megnez.jpg");
  -fx-background-size: 100% 100%
 }
+
+#pane{
+ -fx-background-image: url("had.jpg");
+ -fx-background-size: 100% 100$;
+}
+
+.cimkek{
+ -fx-font-size: 14px;
+ -fx-font-family: "Bookman Old Style";
+ -fx-text-fill: rgb(255, 255, 255);
+}
+
+.mozi{
+ -fx-background-color: #ffc600;
+ -fx-text-box-border: red;
+}

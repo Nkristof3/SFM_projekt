@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
@@ -16,48 +17,35 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.input.MouseButton;
 import javafx.stage.Stage;
 
-public class SecondaryController implements Initializable {
+public class SecondaryController extends DaoImp implements Initializable{
 
 
     public void tableSetup(String sql){
-        ConnectDB connectionClass = new ConnectDB();
-        Connection connection = connectionClass.getConnection();
-
-        lista = FXCollections.observableArrayList();
-        try {
-            ResultSet vissza = connection.createStatement().executeQuery(sql);
-
-            while(vissza.next()){
-                Film film = new Film();
-                film.setTipus(vissza.getString("tipus"));
-                film.setCim(vissza.getString("cim"));
-                film.setReszek(vissza.getInt("reszek"));
-                film.setEvadok(vissza.getInt("evadok"));
-                film.setKedvenc(vissza.getString("kedvenc"));
-                film.setMegnezendo(vissza.getString("megnezendo"));
-                lista.add(film);
-            }
-        } catch (Exception e) {
-            e.getMessage();
-        }
+        lista = tableS(sql);
         tipusOszlop.setCellValueFactory(new PropertyValueFactory<>("tipus"));
         cimOszlop.setCellValueFactory(new PropertyValueFactory<>("cim"));
         reszOszlop.setCellValueFactory(new PropertyValueFactory<>("reszek"));
         evadOszlop.setCellValueFactory(new PropertyValueFactory<>("evadok"));
         kedvencOszlop.setCellValueFactory(new PropertyValueFactory<>("kedvenc"));
         megnezendoOszlop.setCellValueFactory(new PropertyValueFactory<>("megnezendo"));
-
         filmTable.setItems(lista);
     }
 
+    Scene scene;
     @FXML
     private void switchToPrimary() throws IOException {
-        App.setRoot("primary");
+        Stage stage = new Stage();
+        scene = new Scene(App.loadFXML("primary"));
+        stage.setScene(scene);
+        stage.setTitle("Kezdőlap");
+        stage.show();
+        filmTable.getScene().getWindow().hide();
     }
 
     public void hozzaAdAblak() {
@@ -70,11 +58,36 @@ public class SecondaryController implements Initializable {
         }
         Stage stage = new Stage();
         stage.setScene(new Scene(root1));
+        stage.setTitle("Hozzáadás");
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("plus.png")));
+        stage.getScene().getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.show();
     }
 
+    public void torol(){
+        if(filmTable.getSelectionModel().getSelectedItem() != null){
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Törlés");
+            alert.setHeaderText(null);
+            alert.setContentText("Biztosan törli?");
+
+            Optional<ButtonType> result = alert.showAndWait();
+            if(result.get() == ButtonType.OK){
+                torles(filmTable.getSelectionModel().getSelectedItem().getCim());
+                list.removeIf(film -> film.getCim().equals(filmTable.getSelectionModel().getSelectedItem().getCim()));
+            }
+        }
+        else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Törlés");
+            alert.setHeaderText(null);
+            alert.setContentText("Nem jelölt ki semmit!");
+
+            alert.show();
+        }
+    }
     @FXML
-    private TableView<Film> filmTable;
+    public TableView<Film> filmTable;
     @FXML
     private TableColumn<Film, String> tipusOszlop;
     @FXML
@@ -101,5 +114,33 @@ public class SecondaryController implements Initializable {
 
     public void film() {
         tableSetup("select * from film where Tipus = 'Film'");
+    }
+
+    public void kedvencekhez() {
+        if(filmTable.getSelectionModel().getSelectedItem() != null){
+            ujKedvenc(filmTable.getSelectionModel().getSelectedItem().getCim());
+        }
+        else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Kedvencekhez");
+            alert.setHeaderText(null);
+            alert.setContentText("Nem jelölt ki semmit!");
+
+            alert.show();
+        }
+    }
+
+    public void megneztem(ActionEvent actionEvent) {
+        if(filmTable.getSelectionModel().getSelectedItem() != null){
+            ujMegnezett(filmTable.getSelectionModel().getSelectedItem().getCim());
+        }
+        else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Megnéztem");
+            alert.setHeaderText(null);
+            alert.setContentText("Nem jelölt ki semmit!");
+
+            alert.show();
+        }
     }
 }

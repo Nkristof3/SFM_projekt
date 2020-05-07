@@ -1,16 +1,26 @@
 package org.Dreamteam;
-
+import javafx.stage.Stage;
+import org.Dreamteam.SecondaryController.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
+import java.net.URL;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
-public class hozzaAdoController {
+public class hozzaAdoController extends DaoImp implements Initializable{
 
+    String tipus = "Film";
     @FXML
-    TextField typeField;
+    Label evadLabel;
+    @FXML
+    Label reszLabel;
+    @FXML
+    ComboBox<String> comboBox = new ComboBox<>();
     @FXML
     TextField titleField;
     @FXML
@@ -18,32 +28,69 @@ public class hozzaAdoController {
     @FXML
     TextField episodeNumber;
     @FXML
-    TextField favoriteField;
+    CheckBox mgnCheck;
     @FXML
-    TextField wlaterField;
+    CheckBox kedvBox;
     @FXML
+    Button hAd;
 
-    private void hozzaAd() throws SQLException {
-
-        try {
-            ConnectDB connectionClass = new ConnectDB();
-            Connection connection = connectionClass.getConnection();
-
-            String sql = "INSERT INTO film (Tipus, Cim, Evadok, Reszek, Kedvenc, Megnezendo)" + " values(?, ?, ?, ?, ?, ?)";
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, typeField.getText());
-            preparedStatement.setString(2, titleField.getText());
-            preparedStatement.setInt(3, Integer.parseInt(seasonNumber.getText()));
-            preparedStatement.setInt(4, Integer.parseInt(episodeNumber.getText()));
-            preparedStatement.setString(5, favoriteField.getText());
-            preparedStatement.setString(6, wlaterField.getText());
-
-            preparedStatement.executeUpdate();
-
-            connection.close();
+    String mgn = "-";
+    String kedv = "-";
+    @FXML
+    private void checked(){
+        if (mgnCheck.isSelected()) {
+            mgn = "+";
         }
-        catch (Exception e){
-            System.out.println(e.getMessage());
+    }
+
+    @FXML
+    private void checked2(){
+        if (kedvBox.isSelected()) {
+            kedv = "+";
+        }
+    }
+    @FXML
+    private void hozzaAd() throws SQLException {
+        if(!titleField.getText().trim().equals("")) {
+            if(tipus.equals("Sorozat")) {
+                hozzaadas(tipus, titleField.getText(), Integer.parseInt(seasonNumber.getText()), Integer.parseInt(episodeNumber.getText()), kedv, mgn);
+                Stage stage = (Stage) hAd.getScene().getWindow();
+                stage.close();
+            }
+            else if(tipus.equals("Film")){
+                hozzaadas(tipus, titleField.getText(), 0, 1, kedv, mgn);
+                Stage stage = (Stage) hAd.getScene().getWindow();
+                stage.close();
+            }
+        }
+        else{
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Figyelem!");
+            alert.setHeaderText(null);
+            alert.setContentText("Cím megadása kötelező!");
+            alert.show();
+        }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        comboBox.getItems().addAll("Film", "Sorozat");
+        comboBox.setPromptText("Válasszon a listából...");
+    }
+
+    public void valaszt(ActionEvent actionEvent) {
+        tipus = comboBox.getValue();
+        if(tipus == "Film"){
+            seasonNumber.setVisible(false);
+            episodeNumber.setVisible(false);
+            evadLabel.setVisible(false);
+            reszLabel.setVisible(false);
+        }
+        else{
+            seasonNumber.setVisible(true);
+            episodeNumber.setVisible(true);
+            evadLabel.setVisible(true);
+            reszLabel.setVisible(true);
         }
     }
 }

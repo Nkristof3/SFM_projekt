@@ -8,13 +8,14 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 
-public class Film {
-    private final StringProperty tipus = new SimpleStringProperty();
-    private final StringProperty cim = new SimpleStringProperty();
-    private final IntegerProperty reszek = new SimpleIntegerProperty();
-    private final IntegerProperty evadok = new SimpleIntegerProperty();
-    private final StringProperty kedvenc = new SimpleStringProperty();
-    private final StringProperty megnezendo = new SimpleStringProperty();
+public class Film{
+    private StringProperty tipus = new SimpleStringProperty();
+    private StringProperty cim = new SimpleStringProperty();
+    private IntegerProperty reszek = new SimpleIntegerProperty();
+    private IntegerProperty evadok = new SimpleIntegerProperty();
+    private StringProperty kedvenc = new SimpleStringProperty();
+    private StringProperty megnezendo = new SimpleStringProperty();
+
     public String getCim() {
         return cim.get();
     }

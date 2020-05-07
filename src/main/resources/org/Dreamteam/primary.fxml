@@ -19,7 +19,7 @@
       </Label>
       <AnchorPane prefHeight="405.0" prefWidth="790.0">
          <children>
-            <Button contentDisplay="BOTTOM" layoutX="570.0" layoutY="102.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="198.0" styleClass="gomb" stylesheets="@style.css" text="Kedvencek" textFill="WHITE" onAction="#switchToKedvencek">
+            <Button fx:id="kedvG" contentDisplay="BOTTOM" layoutX="570.0" layoutY="102.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="198.0" styleClass="gomb" stylesheets="@style.css" text="Kedvencek" textFill="WHITE" onAction="#switchToKedvencek">
                <font>
                   <Font size="18.0" />
                </font>

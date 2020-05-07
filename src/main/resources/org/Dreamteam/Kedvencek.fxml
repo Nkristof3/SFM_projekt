@@ -5,6 +5,6 @@
 
 <AnchorPane prefHeight="423.0" prefWidth="626.0" styleClass="kedvencek" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.Dreamteam.KedvencekController">
    <children>
-      <Button layoutX="33.0" layoutY="363.0" mnemonicParsing="false" onAction="#switchToPrimary" styleClass="gomb" stylesheets="@style.css" text="Kezdő oldal" textFill="WHITE" />
+      <Button fx:id="kezdo" layoutX="33.0" layoutY="363.0" mnemonicParsing="false" onAction="#switchToPrimary" styleClass="gomb" stylesheets="@style.css" text="Kezdő oldal" textFill="WHITE" />
    </children>
 </AnchorPane>

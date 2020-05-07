@@ -9,7 +9,7 @@
     <children>
       <AnchorPane prefHeight="419.0" prefWidth="527.0">
          <children>
-              <Button fx:id="secondaryButton" layoutX="589.0" layoutY="101.0" onAction="#hozzaAdAblak" prefHeight="39.0" prefWidth="114.0" styleClass="gomb" stylesheets="@style.css" text="Hozzáad" textFill="WHITE">
+              <Button fx:id="secondaryButton" layoutX="589.0" layoutY="101.0" onAction="#hozzaAdAblak" prefHeight="39.0" prefWidth="114.0" styleClass="gomb" stylesheets="@style.css" text="Új" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
@@ -19,7 +19,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
-              <Button layoutX="589.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="114.0" styleClass="gomb" stylesheets="@style.css" text="Sorozat" textFill="WHITE" onAction="#sorozat">
+              <Button layoutX="589.0" mnemonicParsing="false" onAction="#sorozat" prefHeight="39.0" prefWidth="114.0" styleClass="gomb" stylesheets="@style.css" text="Sorozat" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
@@ -34,9 +34,24 @@
                   <TableColumn fx:id="megnezendoOszlop" minWidth="0.0" prefWidth="103.0" text="Megnézendő" />
               </columns>
             </TableView>
-            <Button layoutX="589.0" layoutY="51.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="114.0" styleClass="gomb" stylesheets="@style.css" text="Film" textFill="WHITE" onAction="#film">
+            <Button layoutX="589.0" layoutY="51.0" mnemonicParsing="false" onAction="#film" prefHeight="39.0" prefWidth="114.0" styleClass="gomb" stylesheets="@style.css" text="Film" textFill="WHITE">
                 <font>
                     <Font size="18.0" />
+                </font>
+            </Button>
+            <Button layoutX="589.0" layoutY="153.0" mnemonicParsing="false" onAction="#torol" prefHeight="39.0" prefWidth="114.0" styleClass="gomb" stylesheets="@style.css" text="Törlés" textFill="WHITE">
+                <font>
+                    <Font size="18.0" />
+                </font>
+            </Button>
+            <Button layoutX="589.0" layoutY="203.0" mnemonicParsing="false" onAction="#kedvencekhez" prefHeight="39.0" prefWidth="114.0" styleClass="gomb" stylesheets="@style.css" text="Kedvencekhez" textFill="WHITE">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+            <Button layoutX="589.0" layoutY="253.0" mnemonicParsing="false" onAction="#megneztem" prefHeight="39.0" prefWidth="114.0" styleClass="gomb" stylesheets="@style.css" text="Megnéztem" textFill="WHITE">
+                <font>
+                    <Font size="14.0" />
                 </font>
             </Button>
          </children>
