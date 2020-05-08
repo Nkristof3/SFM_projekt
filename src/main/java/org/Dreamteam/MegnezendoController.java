@@ -11,6 +11,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -30,6 +31,8 @@ public class MegnezendoController extends DaoImp implements Initializable {
 
     public void mozi(String sql)
     {
+        l2 = tableM(sql);
+
         cimOszlop3.setCellValueFactory(new PropertyValueFactory<>("cim"));
         hosszOszlop.setCellValueFactory(new PropertyValueFactory<>("hossz"));
         idopontOszlop.setCellValueFactory(new PropertyValueFactory<>("idopont"));
@@ -48,11 +51,11 @@ public class MegnezendoController extends DaoImp implements Initializable {
     @FXML
     TableColumn<Film, String> cimOszlop2;
     @FXML
-    TableColumn<Mozi, Time> hosszOszlop;
+    TableColumn<Mozi, String> hosszOszlop;
     @FXML
     TableColumn<Mozi, String> cimOszlop3;
     @FXML
-    TableColumn<Mozi, Date> idopontOszlop;
+    TableColumn<Mozi, String> idopontOszlop;
     @FXML
     Button kezdo2;
     Scene scene;
@@ -69,6 +72,6 @@ public class MegnezendoController extends DaoImp implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         megnTable("select * from film where megnezendo = '+' ");
-        mozi("select * from mozi m join (select cim from film f where megnezendo = '+') on m.cim = f.cim");
+        mozi("select * from mozi where cim in (select cim from film where megnezendo = '+')");
     }
 }

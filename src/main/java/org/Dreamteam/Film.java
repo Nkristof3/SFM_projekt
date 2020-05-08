@@ -16,6 +16,8 @@ public class Film{
     private StringProperty kedvenc = new SimpleStringProperty();
     private StringProperty megnezendo = new SimpleStringProperty();
 
+    public Film(){ }
+
     public String getCim() {
         return cim.get();
     }

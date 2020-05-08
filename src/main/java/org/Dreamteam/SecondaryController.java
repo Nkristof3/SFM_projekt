@@ -23,6 +23,7 @@ import javafx.scene.image.Image;
 import javafx.scene.input.MouseButton;
 import javafx.stage.Stage;
 
+
 public class SecondaryController extends DaoImp implements Initializable{
 
 
@@ -101,7 +102,7 @@ public class SecondaryController extends DaoImp implements Initializable{
     @FXML
     private TableColumn<Film, String> megnezendoOszlop;
 
-    private ObservableList<Film> lista;
+    public ObservableList<Film> lista;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

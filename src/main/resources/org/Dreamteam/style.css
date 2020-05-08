@@ -28,6 +28,18 @@
  -fx-background-size: 100% 100$;
 }
 
+#filmTable .table-column {
+    -fx-alignment: CENTER;
+}
+
+#moziTabla .table-column {
+    -fx-alignment: CENTER;
+}
+
+#megnezendoTabla .table-column{
+    -fx-alignment: CENTER;
+}
+
 .cimkek{
  -fx-font-size: 14px;
  -fx-font-family: "Bookman Old Style";

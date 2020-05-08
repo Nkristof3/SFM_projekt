@@ -1,5 +1,6 @@
 package org.Dreamteam;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 import java.sql.Time;
@@ -9,8 +10,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Mozi {
-    private StringProperty cim;
-    private Date idopont;
+    private StringProperty cim = new SimpleStringProperty();
+    private Timestamp idopont;
     private Time hossz;
 
     public String getCim() {
@@ -25,11 +26,11 @@ public class Mozi {
         this.cim.set(cim);
     }
 
-    public Date getIdopont() {
+    public Timestamp getIdopont() {
         return idopont;
     }
 
-    public void setIdopont(Date idopont) {
+    public void setIdopont(Timestamp idopont) {
         this.idopont = idopont;
     }
 

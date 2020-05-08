@@ -9,10 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -33,14 +30,15 @@ public class DaoImp implements Dao {
 
             while(vissza.next()){
                 Mozi mozi = new Mozi();
-                mozi.setCim(vissza.getString("cim"));
-                mozi.setHossz(vissza.getTime("hossz"));
-                mozi.setIdopont(vissza.getDate("idopont"));
+                mozi.setCim(vissza.getObject("cim", String.class));
+                mozi.setHossz(vissza.getObject("hossz", Time.class));
+                mozi.setIdopont(vissza.getObject("idopont", Timestamp.class));
                 list2.add(mozi);
             }
         } catch (Exception e) {
             e.getMessage();
         }
+
         return list2;
     }
 
