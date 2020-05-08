@@ -6,16 +6,16 @@
 
 <AnchorPane prefHeight="500.0" prefWidth="700.0" styleClass="megnezendo" stylesheets="@style.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.Dreamteam.MegnezendoController">
    <children>
-       <ImageView fitHeight="238.0" fitWidth="246.0" layoutX="239.0" layoutY="5.0">
+       <ImageView fitHeight="238.0" fitWidth="246.0" layoutX="279.0" layoutY="5.0">
            <image>
                <Image url="@nyil2.png" />
            </image>
        </ImageView>
       <Button fx:id="kezdo2" layoutX="45.0" layoutY="418.0" mnemonicParsing="false" onAction="#switchToPrimary" styleClass="gomb" stylesheets="@style.css" text="Kezdő oldal" textFill="WHITE" />
-      <TableView fx:id="megnezendoTabla" layoutX="45.0" layoutY="24.0" prefHeight="200.0" prefWidth="234.0">
+      <TableView fx:id="megnezendoTabla" layoutX="45.0" layoutY="24.0" prefHeight="200.0" prefWidth="262.0">
         <columns>
           <TableColumn fx:id="tipusOszlop2" prefWidth="69.0" text="Típus" />
-          <TableColumn fx:id="cimOszlop2" prefWidth="163.0" text="Cím" />
+          <TableColumn fx:id="cimOszlop2" prefWidth="192.0" text="Cím" />
         </columns>
       </TableView>
       <TableView fx:id="moziTabla" layoutX="239.0" layoutY="250.0" prefHeight="200.0" prefWidth="416.0">
@@ -25,6 +25,6 @@
            <TableColumn fx:id="idopontOszlop" prefWidth="162.39993286132812" text="Legközelebbi időpont" />
         </columns>
       </TableView>
-      <TextField layoutX="289.0" layoutY="88.0" prefHeight="25.0" prefWidth="123.0" styleClass="mozi" text="Ezek közül moziban:" />
+      <TextField layoutX="324.0" layoutY="89.0" prefHeight="25.0" prefWidth="123.0" styleClass="mozi" text="Ezek közül moziban:" />
    </children>
 </AnchorPane>

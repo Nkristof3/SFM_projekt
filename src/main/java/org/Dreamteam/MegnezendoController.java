@@ -16,6 +16,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class MegnezendoController extends DaoImp implements Initializable {
@@ -65,6 +66,7 @@ public class MegnezendoController extends DaoImp implements Initializable {
         scene = new Scene(App.loadFXML("primary"));
         stage.setScene(scene);
         stage.setTitle("Kezdőlap");
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("logo.jpg")));
         stage.show();
         kezdo2.getScene().getWindow().hide();
     }

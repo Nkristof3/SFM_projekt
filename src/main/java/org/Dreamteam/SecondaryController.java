@@ -45,9 +45,11 @@ public class SecondaryController extends DaoImp implements Initializable{
         scene = new Scene(App.loadFXML("primary"));
         stage.setScene(scene);
         stage.setTitle("Kezdőlap");
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("logo.jpg")));
         stage.show();
         filmTable.getScene().getWindow().hide();
     }
+
 
     public void hozzaAdAblak() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("hozzaAdoAblak.fxml"));
@@ -120,6 +122,8 @@ public class SecondaryController extends DaoImp implements Initializable{
     public void kedvencekhez() {
         if(filmTable.getSelectionModel().getSelectedItem() != null){
             ujKedvenc(filmTable.getSelectionModel().getSelectedItem().getCim());
+            sorozat();
+            film();
         }
         else{
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -134,6 +138,8 @@ public class SecondaryController extends DaoImp implements Initializable{
     public void megneztem(ActionEvent actionEvent) {
         if(filmTable.getSelectionModel().getSelectedItem() != null){
             ujMegnezett(filmTable.getSelectionModel().getSelectedItem().getCim());
+            sorozat();
+            film();
         }
         else{
             Alert alert = new Alert(Alert.AlertType.ERROR);

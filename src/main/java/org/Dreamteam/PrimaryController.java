@@ -16,7 +16,7 @@ public class PrimaryController {
     Button kedvG;
     Scene scene;
     @FXML
-    private void switchToSecondary() throws IOException {
+     private void switchToSecondary() throws IOException {
         Stage stage = new Stage();
         scene = new Scene(App.loadFXML("secondary"));
         stage.setScene(scene);
@@ -40,6 +40,7 @@ public class PrimaryController {
         scene = new Scene(App.loadFXML("Megnezendo"));
         stage.setScene(scene);
         stage.setTitle("Megnézendő");
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("wlater.png")));
         stage.show();
         kedvG.getScene().getWindow().hide();
     }

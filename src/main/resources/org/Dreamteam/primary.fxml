@@ -29,7 +29,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button layoutX="570.0" layoutY="39.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="198.0" styleClass="gomb" stylesheets="@style.css" text="Összes film" textFill="WHITE" onAction="#switchToSecondary">
+            <Button layoutX="570.0" layoutY="39.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="198.0" styleClass="gomb" stylesheets="@style.css" text="Összes" textFill="WHITE" onAction="#switchToSecondary">
                <font>
                   <Font size="18.0" />
                </font>

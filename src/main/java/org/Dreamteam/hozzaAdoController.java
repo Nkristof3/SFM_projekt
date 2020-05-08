@@ -3,6 +3,8 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.Dreamteam.SecondaryController.*;
 import javafx.collections.FXCollections;
@@ -12,11 +14,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class hozzaAdoController extends DaoImp implements Initializable{
+
 
     String tipus = "Film";
     @FXML
@@ -66,6 +70,7 @@ public class hozzaAdoController extends DaoImp implements Initializable{
                 Stage stage = (Stage) hAd.getScene().getWindow();
                 stage.close();
             }
+
         }
         else{
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
