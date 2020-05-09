@@ -51,7 +51,7 @@
             </Button>
             <Button layoutX="589.0" layoutY="253.0" mnemonicParsing="false" onAction="#megneztem" prefHeight="39.0" prefWidth="114.0" styleClass="gomb" stylesheets="@style.css" text="Megnéztem" textFill="WHITE">
                 <font>
-                    <Font size="14.0" />
+                    <Font size="16.0" />
                 </font>
             </Button>
          </children>

@@ -153,7 +153,6 @@ public class SecondaryController extends DaoImp implements Initializable{
             alert.setTitle("Megnéztem");
             alert.setHeaderText(null);
             alert.setContentText("Nem jelölt ki semmit!");
-
             alert.show();
         }
     }
