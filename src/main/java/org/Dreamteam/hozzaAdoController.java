@@ -61,9 +61,19 @@ public class hozzaAdoController extends DaoImp implements Initializable{
     private void hozzaAd() throws SQLException {
         if(!titleField.getText().trim().equals("")) {
             if(tipus.equals("Sorozat")) {
-                hozzaadas(tipus, titleField.getText(), Integer.parseInt(seasonNumber.getText()), Integer.parseInt(episodeNumber.getText()), kedv, mgn);
-                Stage stage = (Stage) hAd.getScene().getWindow();
-                stage.close();
+                try
+                {
+                    hozzaadas(tipus, titleField.getText(), Integer.parseInt(seasonNumber.getText()), Integer.parseInt(episodeNumber.getText()), kedv, mgn);
+                    Stage stage = (Stage) hAd.getScene().getWindow();
+                    stage.close();
+                }
+                catch (NumberFormatException e){
+                    Alert alert  = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Hiba!");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Nem számot adott meg évadok/részek számának!");
+                    alert.show();
+                }
             }
             else if(tipus.equals("Film")){
                 hozzaadas(tipus, titleField.getText(), 0, 1, kedv, mgn);
