@@ -122,15 +122,18 @@ public class SecondaryController extends DaoImp implements Initializable{
     public void kedvencekhez() {
         if(filmTable.getSelectionModel().getSelectedItem() != null){
             ujKedvenc(filmTable.getSelectionModel().getSelectedItem().getCim());
-            sorozat();
-            film();
+            if(filmTable.getSelectionModel().getSelectedItem().getTipus().equals("Sorozat")) {
+                sorozat();
+            }
+            else {
+                film();
+            }
         }
         else{
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Kedvencekhez");
             alert.setHeaderText(null);
             alert.setContentText("Nem jelölt ki semmit!");
-
             alert.show();
         }
     }
@@ -138,8 +141,12 @@ public class SecondaryController extends DaoImp implements Initializable{
     public void megneztem(ActionEvent actionEvent) {
         if(filmTable.getSelectionModel().getSelectedItem() != null){
             ujMegnezett(filmTable.getSelectionModel().getSelectedItem().getCim());
-            sorozat();
-            film();
+            if(filmTable.getSelectionModel().getSelectedItem().getTipus().equals("Sorozat")) {
+                sorozat();
+            }
+            else {
+                film();
+            }
         }
         else{
             Alert alert = new Alert(Alert.AlertType.ERROR);

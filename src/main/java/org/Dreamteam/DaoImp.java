@@ -126,7 +126,7 @@ public class DaoImp implements Dao {
         ConnectDB connectionClass = new ConnectDB();
         Connection connection = connectionClass.getConnection();
 
-        String sql = "UPDATE film SET megnezendo = '+' WHERE cim = '"+cim+"'";
+        String sql = "UPDATE film SET megnezendo = '-' WHERE cim = '"+cim+"'";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.executeUpdate();
