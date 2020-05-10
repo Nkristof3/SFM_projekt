@@ -39,7 +39,6 @@ public class DaoImp implements Dao {
         } catch (Exception e) {
             e.getMessage();
         }
-
         return list2;
     }
 
@@ -83,7 +82,6 @@ public class DaoImp implements Dao {
             preparedStatement.setString(6, megn);
 
             preparedStatement.executeUpdate();
-
             connection.close();
         }
         catch (Exception e){

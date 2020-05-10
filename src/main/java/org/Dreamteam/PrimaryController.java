@@ -15,13 +15,10 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.skin.SplitMenuButtonSkin;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import javafx.scene.web.*;
 public class PrimaryController{
 
     @FXML
     Button kedvG;
-    @FXML
-    Hyperlink link = new Hyperlink();
     Scene scene;
     @FXML
      private void switchToSecondary() throws IOException {
