@@ -6,11 +6,11 @@
 <AnchorPane prefHeight="423.0" prefWidth="626.0" styleClass="kedvencek" stylesheets="@style.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.Dreamteam.KedvencekController">
    <children>
       <Button fx:id="kezdo" layoutX="33.0" layoutY="363.0" mnemonicParsing="false" onAction="#switchToPrimary" styleClass="gomb" stylesheets="@style.css" text="Kezdő oldal" textFill="WHITE" />
-      <TableView layoutX="73.0" layoutY="39.0" prefHeight="200.0" prefWidth="481.0">
+      <TableView fx:id="kedvencTable" layoutX="73.0" layoutY="39.0" onMouseClicked="#megnyit" prefHeight="306.0" prefWidth="481.0">
         <columns>
-          <TableColumn prefWidth="183.0" text="Cím" />
-          <TableColumn minWidth="0.0" prefWidth="72.0" text="Értékelés" />
-            <TableColumn minWidth="0.0" prefWidth="225.0" text="Megjegyzés" />
+          <TableColumn fx:id="cimOszlopK" prefWidth="183.0" text="Cím" />
+          <TableColumn fx:id="ertekelesOszlop" minWidth="0.0" prefWidth="72.0" text="Értékelés" />
+            <TableColumn fx:id="megjOszlop" minWidth="0.0" prefWidth="225.0" text="Megjegyzés (max. 500 karakter)" />
         </columns>
       </TableView>
    </children>
