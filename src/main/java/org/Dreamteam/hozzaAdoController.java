@@ -3,6 +3,8 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
@@ -55,6 +57,18 @@ public class hozzaAdoController extends DaoImp implements Initializable{
     private void checked2(){
         if (kedvBox.isSelected()) {
             kedv = "+";
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("kedvencHozzaado.fxml"));
+            Stage stage = new Stage();
+            try {
+                Scene scene = new Scene(fxmlLoader.load());
+                stage.setScene(scene);
+                stage.getIcons().add(new Image(getClass().getResourceAsStream("csillag.png")));
+                stage.setTitle(titleField.getText());
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
         }
     }
     @FXML

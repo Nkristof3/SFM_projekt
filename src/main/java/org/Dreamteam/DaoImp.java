@@ -20,6 +20,7 @@ public class DaoImp implements Dao {
 
     public ObservableList<Film> list;
     public ObservableList<Mozi> list2;
+    public ObservableList<Kedvenc> list3;
 
     @Override
     public ObservableList<Mozi> tableM(String sql) {
@@ -64,6 +65,27 @@ public class DaoImp implements Dao {
             e.getMessage();
         }
         return list;
+    }
+
+    @Override
+    public ObservableList<Kedvenc> tableK(String sql) {
+        ConnectDB connectionClass = new ConnectDB();
+        Connection connection = connectionClass.getConnection();
+        list3 = FXCollections.observableArrayList();
+        try {
+            ResultSet vissza = connection.createStatement().executeQuery(sql);
+
+            while(vissza.next()){
+                Kedvenc kedvenc = new Kedvenc();
+                kedvenc.setCim(vissza.getObject("cim", String.class));
+                kedvenc.setRating(vissza.getObject("rating", Integer.class));
+                kedvenc.setMegjegyzes(vissza.getObject("megjegyzes", String.class));
+                list3.add(kedvenc);
+            }
+        } catch (Exception e) {
+            e.getMessage();
+        }
+        return list3;
     }
 
     @Override
@@ -132,6 +154,26 @@ public class DaoImp implements Dao {
             connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void kedvenchezAd(String cim, int rating, String megjegyzes) {
+        try {
+            ConnectDB connectionClass = new ConnectDB();
+            Connection connection = connectionClass.getConnection();
+
+            String sql = "INSERT INTO kedvenc (Cim, Rating, Megjegyzes)" + " values(?, ?, ?)";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, cim);
+            preparedStatement.setInt(2, rating);
+            preparedStatement.setString(3, megjegyzes);
+
+            preparedStatement.executeUpdate();
+            connection.close();
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
         }
     }
 

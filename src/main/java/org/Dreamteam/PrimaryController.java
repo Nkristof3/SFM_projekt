@@ -36,6 +36,7 @@ public class PrimaryController{
         scene = new Scene(App.loadFXML("Kedvencek"));
         stage.setScene(scene);
         stage.setTitle("Kedvencek");
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("kedvencek.png")));
         stage.show();
         kedvG.getScene().getWindow().hide();
     }

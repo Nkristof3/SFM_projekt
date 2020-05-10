@@ -33,7 +33,6 @@ public class MegnezendoController extends DaoImp implements Initializable {
     public void mozi(String sql)
     {
         l2 = tableM(sql);
-
         cimOszlop3.setCellValueFactory(new PropertyValueFactory<>("cim"));
         hosszOszlop.setCellValueFactory(new PropertyValueFactory<>("hossz"));
         idopontOszlop.setCellValueFactory(new PropertyValueFactory<>("idopont"));
