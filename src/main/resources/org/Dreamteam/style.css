@@ -49,6 +49,7 @@
 .mozi{
  -fx-background-color: #ffc600;
  -fx-text-box-border: red;
+ -fx-font-family: "Bookman Old Style";
 }
 Button:hover{
 -fx-opacity: 0.5;
