@@ -2,13 +2,13 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<?import javafx.scene.text.Font?>
 <AnchorPane prefHeight="423.0" prefWidth="626.0" styleClass="kedvencek" stylesheets="@style.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.Dreamteam.KedvencekController">
    <children>
-       <Button fx:id="kezdo" layoutX="45.0" layoutY="396.0" mnemonicParsing="false" onAction="#switchToPrimary" prefHeight="47.0" prefWidth="98.0" styleClass="gomb" stylesheets="@style.css" text="Kezdőlap" textFill="WHITE">
+       <Button fx:id="kezdo" layoutX="24.0" layoutY="354.0" mnemonicParsing="false" onAction="#switchToPrimary" prefHeight="47.0" prefWidth="98.0" styleClass="gomb" stylesheets="@style.css" text="Kezdőlap" textFill="WHITE">
            <font>
-               <Font size="18.0"/>
+               <Font size="18.0" />
            </font>
        </Button>
       <TableView fx:id="kedvencTable" layoutX="73.0" layoutY="39.0" onMouseClicked="#megnyit" prefHeight="306.0" prefWidth="481.0">
