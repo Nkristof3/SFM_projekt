@@ -5,10 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -30,10 +27,20 @@ public class kedvencHozzaadoController extends DaoImp implements Initializable {
     String s = "5 - Mindenkinek ajánlom\n"+"...\n"+"1 - Szórakoztató volt";
 
     public void kedvencAdatok() {
-        kedvenchezAd(cimmezo.getText(), cBox.getValue(), megjegyzesek.getText());
-        Stage stage;
-        stage = (Stage) cimmezo.getScene().getWindow();
-        stage.close();
+        if(!(cimmezo.getText().equals("") || cBox.getValue() == null || megjegyzesek.getText().equals("")))
+        {
+            kedvenchezAd(cimmezo.getText(), cBox.getValue(), megjegyzesek.getText());
+            Stage stage;
+            stage = (Stage) cimmezo.getScene().getWindow();
+            stage.close();
+        }
+        else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Hiba!");
+            alert.setHeaderText(null);
+            alert.setContentText("Minden mezőt ki kell tölteni!");
+            alert.show();
+        }
     }
 
     @Override

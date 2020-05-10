@@ -18,5 +18,6 @@
             <TableColumn fx:id="megjOszlop" minWidth="0.0" prefWidth="225.0" text="Megjegyzés (max. 500 karakter)" />
         </columns>
       </TableView>
+      <Label styleClass="mozi" stylesheets="@style.css" layoutX="73.0" layoutY="14.0" text="Kattintson a címre a megjegyzésekért!" />
    </children>
 </AnchorPane>
