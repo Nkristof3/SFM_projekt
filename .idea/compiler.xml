@@ -14,6 +14,7 @@
         <module name="SFM_projekt3" />
         <module name="SFM_projekt" />
         <module name="sfm_projekt" />
+        <module name="SFM_projekt" />
       </profile>
     </annotationProcessing>
   </component>

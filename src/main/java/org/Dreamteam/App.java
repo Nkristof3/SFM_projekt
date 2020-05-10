@@ -6,7 +6,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+import javafx.scene.media.MediaView;
 
 import java.io.IOException;
 
@@ -20,6 +23,10 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("primary"));
+        MediaView videoablak = (MediaView)scene.lookup("#videoablak");
+        MediaPlayer player = new MediaPlayer(new Media(getClass().getResource("video.mp4").toExternalForm()));
+        player.setAutoPlay(true);
+        videoablak.setMediaPlayer(player);
         stage.setScene(scene);
         stage.getIcons().add(new Image(getClass().getResourceAsStream("logo.jpg")));
         stage.show();

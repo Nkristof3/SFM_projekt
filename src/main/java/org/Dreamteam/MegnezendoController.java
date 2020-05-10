@@ -17,6 +17,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 
 public class MegnezendoController extends DaoImp implements Initializable {
@@ -63,6 +66,10 @@ public class MegnezendoController extends DaoImp implements Initializable {
     private void switchToPrimary() throws IOException {
         Stage stage = new Stage();
         scene = new Scene(App.loadFXML("primary"));
+        MediaView videoablak = (MediaView)scene.lookup("#videoablak");
+        MediaPlayer player = new MediaPlayer(new Media(getClass().getResource("video.mp4").toExternalForm()));
+        player.setAutoPlay(true);
+        videoablak.setMediaPlayer(player);
         stage.setScene(scene);
         stage.setTitle("Kezdőlap");
         stage.getIcons().add(new Image(getClass().getResourceAsStream("logo.jpg")));
