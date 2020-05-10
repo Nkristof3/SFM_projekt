@@ -121,23 +121,32 @@ public class SecondaryController extends DaoImp implements Initializable{
 
     public void kedvencekhez() {
         if(filmTable.getSelectionModel().getSelectedItem() != null){
-            ujKedvenc(filmTable.getSelectionModel().getSelectedItem().getCim());
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("kedvencHozzaado.fxml"));
-            Stage stage = new Stage();
-            try {
-                Scene scene = new Scene(fxmlLoader.load());
-                stage.setScene(scene);
-                stage.setTitle(filmTable.getSelectionModel().getSelectedItem().getCim());
-                stage.getIcons().add(new Image(getClass().getResourceAsStream("csillag.png")));
-                stage.show();
-            } catch (IOException e) {
-                e.printStackTrace();
+            if(!filmTable.getSelectionModel().getSelectedItem().getKedvenc().equals("+")){
+                ujKedvenc(filmTable.getSelectionModel().getSelectedItem().getCim());
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("kedvencHozzaado.fxml"));
+                Stage stage = new Stage();
+                try {
+                    Scene scene = new Scene(fxmlLoader.load());
+                    stage.setScene(scene);
+                    stage.setTitle(filmTable.getSelectionModel().getSelectedItem().getCim());
+                    stage.getIcons().add(new Image(getClass().getResourceAsStream("csillag.png")));
+                    stage.show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                if(filmTable.getSelectionModel().getSelectedItem().getTipus().equals("Sorozat")) {
+                    sorozat();
+                }
+                else {
+                    film();
+                }
             }
-            if(filmTable.getSelectionModel().getSelectedItem().getTipus().equals("Sorozat")) {
-                sorozat();
-            }
-            else {
-                film();
+            else{
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Kedvencekhez");
+                alert.setHeaderText(null);
+                alert.setContentText("Már a kedvencek között van!");
+                alert.show();
             }
         }
         else{

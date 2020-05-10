@@ -64,6 +64,7 @@ public class hozzaAdoController extends DaoImp implements Initializable{
                 stage.setScene(scene);
                 stage.getIcons().add(new Image(getClass().getResourceAsStream("csillag.png")));
                 stage.setTitle(titleField.getText());
+                stage.getScene().getStylesheets().add(getClass().getResource("style.css").toExternalForm());
                 stage.show();
             } catch (IOException e) {
                 e.printStackTrace();

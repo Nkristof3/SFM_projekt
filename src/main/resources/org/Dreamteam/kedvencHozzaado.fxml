@@ -5,16 +5,21 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="302.0" prefWidth="402.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.Dreamteam.kedvencHozzaadoController">
+<AnchorPane prefHeight="373.0" prefWidth="518.0" styleClass="kha" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.Dreamteam.kedvencHozzaadoController">
    <children>
-      <ComboBox fx:id="cBox" layoutX="147.0" layoutY="96.0" prefHeight="26.0" prefWidth="85.0" />
-      <TextField fx:id="megjegyzesek" layoutX="98.0" layoutY="183.0" prefHeight="62.0" prefWidth="204.0" />
-      <Button fx:id="kedvencHozzaad" layoutX="184.0" layoutY="262.0" mnemonicParsing="false" onAction="#kedvencAdatok" text="OK" />
-      <TextField fx:id="cimmezo" layoutX="147.0" layoutY="43.0" />
-      <Label layoutX="76.0" layoutY="47.0" text="Cím újra:" />
-      <Label layoutX="75.0" layoutY="101.0" text="Értékelés:" />
-      <Label layoutX="111.0" layoutY="151.0" text="Megjegyzések (max. 500 karakter)" />
-      <Label layoutX="244.0" layoutY="78.0" fx:id="utmutato"/>
+      <ComboBox fx:id="cBox" layoutX="244.0" layoutY="81.0" prefHeight="26.0" prefWidth="85.0" />
+      <TextField fx:id="megjegyzesek" layoutX="83.0" layoutY="216.0" prefHeight="52.0" prefWidth="352.0" />
+      <Button fx:id="kedvencHozzaad" layoutX="225.0" layoutY="293.0" mnemonicParsing="false" onAction="#kedvencAdatok" prefWidth="68.0" styleClass="gomb" stylesheets="@style.css" text="OK" textFill="white">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <TextField fx:id="cimmezo" layoutX="244.0" layoutY="33.0" />
+      <Label layoutX="147.0" layoutY="35.0" styleClass="labelstilus" stylesheets="@style.css" text="Cím újra:" />
+      <Label layoutX="145.0" layoutY="83.0" styleClass="labelstilus" stylesheets="@style.css" text="Értékelés:" />
+      <Label layoutX="140.0" layoutY="187.0" styleClass="labelstilus" stylesheets="@style.css" text="Megjegyzések (max. 500 karakter)" />
+      <Label fx:id="utmutato" layoutX="260.0" layoutY="120.0" styleClass="labelstilus2" stylesheets="@style.css" />
    </children>
 </AnchorPane>

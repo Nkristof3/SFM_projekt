@@ -1,6 +1,6 @@
 .body {
  -fx-background-image: url("15076052.jpg");
- -fx-background-size: 100% 100%
+ -fx-background-size: 100% 100%;
 }
 .gomb{
     -fx-background-color: red;
@@ -11,21 +11,21 @@
 
 .osszes{
     -fx-background-image: url("hatter.jpg");
-     -fx-background-size: 100% 100%
+     -fx-background-size: 100% 100%;
 }
 
 .kedvencek {
  -fx-background-image: url("682.png");
- -fx-background-size: 100% 100%
+ -fx-background-size: 100% 100%;
 }
 .megnezendo {
  -fx-background-image: url("megnez.jpg");
- -fx-background-size: 100% 100%
+ -fx-background-size: 100% 100%;
 }
 
 #pane{
  -fx-background-image: url("had.jpg");
- -fx-background-size: 100% 100$;
+ -fx-background-size: 100% 100%;
 }
 
 #filmTable .table-column {
@@ -56,4 +56,25 @@ Button:hover{
 -fx-border-color:black;
 -fx-border-width: 2 2 2 2;
 -fx-border-radius: 2px;
+}
+
+.kha{
+    -fx-background-image: url("hatt.jpg");
+    -fx-background-size: 100% 100%;
+}
+
+.labelstilus{
+    -fx-background-color: white;
+    -fx-font-family: "Bookman Old Style";
+    -fx-text-fill: black;
+    -fx-font-size: 14px;
+    -fx-label-padding: 3px;
+}
+
+.labelstilus2{
+    -fx-background-color: white;
+    -fx-font-family: "Bookman Old Style";
+    -fx-text-fill: black;
+    -fx-font-size: 12px;
+    -fx-label-padding: 3px;
 }
