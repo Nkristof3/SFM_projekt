@@ -50,3 +50,10 @@
  -fx-background-color: #ffc600;
  -fx-text-box-border: red;
 }
+Button:hover{
+-fx-opacity: 0.5;
+-fx-cursor: hand;
+-fx-border-color:black;
+-fx-border-width: 2 2 2 2;
+-fx-border-radius: 2px;
+}
