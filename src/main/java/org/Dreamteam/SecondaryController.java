@@ -22,6 +22,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseButton;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 
 public class SecondaryController extends DaoImp implements Initializable{
@@ -122,7 +123,6 @@ public class SecondaryController extends DaoImp implements Initializable{
     public void kedvencekhez() {
         if(filmTable.getSelectionModel().getSelectedItem() != null){
             if(!filmTable.getSelectionModel().getSelectedItem().getKedvenc().equals("+")){
-                ujKedvenc(filmTable.getSelectionModel().getSelectedItem().getCim());
                 FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("kedvencHozzaado.fxml"));
                 Stage stage = new Stage();
                 try {
@@ -134,6 +134,7 @@ public class SecondaryController extends DaoImp implements Initializable{
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+                ujKedvenc(filmTable.getSelectionModel().getSelectedItem().getCim());
                 if(filmTable.getSelectionModel().getSelectedItem().getTipus().equals("Sorozat")) {
                     sorozat();
                 }
@@ -145,6 +146,7 @@ public class SecondaryController extends DaoImp implements Initializable{
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Kedvencekhez");
                 alert.setHeaderText(null);
+                alert.initStyle(StageStyle.UTILITY);
                 alert.setContentText("Már a kedvencek között van!");
                 alert.show();
             }
