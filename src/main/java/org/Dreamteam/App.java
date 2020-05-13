@@ -1,15 +1,14 @@
 package org.Dreamteam;
 
 import javafx.application.Application;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.stage.Stage;
 import javafx.scene.media.MediaView;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 

@@ -79,3 +79,7 @@ Button:hover{
     -fx-font-size: 12px;
     -fx-label-padding: 3px;
 }
+#filmTable .tabla{
+    -fx-background-image: url("kep.jpg");
+     -fx-background-size: 100% 100%;
+}
