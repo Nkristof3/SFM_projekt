@@ -177,4 +177,26 @@ public class DaoImp implements Dao {
         }
     }
 
+    @Override
+    public String keres(String cim) {
+        ConnectDB connectionClass = new ConnectDB();
+        Connection connection = connectionClass.getConnection();
+        String keresett = "";
+        String keresett2 = "";
+        String keresett3 = "";
+        String sql = "select * from film where cim = '"+cim+"'";
+        try {
+            ResultSet vissza = connection.createStatement().executeQuery(sql);
+            while (vissza.next()){
+                keresett = vissza.getString("cim");
+                keresett2 = vissza.getString("tipus");
+                keresett3 = vissza.getString("megnezendo");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        String returnvalue = keresett2 + " -> " + keresett + " -> Megnézendő: " + keresett3 + ". Szerepel az adatbázisban!";
+        return returnvalue;
+    }
+
 }

@@ -12,4 +12,5 @@ public interface Dao {
     void ujKedvenc(String cim);
     void ujMegnezett(String cim);
     void kedvenchezAd (String cim, int rating, String megjegyzes);
+    String keres (String cim);
 }

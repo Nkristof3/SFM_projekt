@@ -97,6 +97,9 @@ public class SecondaryController extends DaoImp implements Initializable{
             alert.show();
         }
     }
+
+    @FXML
+    TextField kereso;
     @FXML
     public TableView<Film> filmTable;
     @FXML
@@ -182,6 +185,37 @@ public class SecondaryController extends DaoImp implements Initializable{
             alert.setTitle("Megnéztem");
             alert.setHeaderText(null);
             alert.setContentText("Nem jelölt ki semmit!");
+            alert.show();
+        }
+    }
+
+    public void kereses() {
+        if(!kereso.getText().equals("")){
+            String leiras = keres(kereso.getText());
+            kereso.setText("");
+            if(!leiras.equals(" ->  -> Megnézendő: . Szerepel az adatbázisban!")) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Találat!");
+                alert.setHeaderText(null);
+                alert.initStyle(StageStyle.UTILITY);
+                alert.setContentText(leiras);
+                alert.show();
+            }
+            else{
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Sikertelen keresés!");
+                alert.setHeaderText(null);
+                alert.initStyle(StageStyle.UTILITY);
+                alert.setContentText("Nincs benne az adatbázisban!");
+                alert.show();
+            }
+        }
+        else{
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Találat!");
+            alert.setHeaderText(null);
+            alert.initStyle(StageStyle.UTILITY);
+            alert.setContentText("Nem írt be semmit!");
             alert.show();
         }
     }

@@ -115,10 +115,10 @@ public class hozzaAdoController extends DaoImp implements Initializable{
     public void valaszt(ActionEvent actionEvent) {
         tipus = comboBox.getValue();
         if(tipus == "Film"){
+            reszLabel.setVisible(true);
+            episodeNumber.setVisible(true);
             seasonNumber.setVisible(false);
-            episodeNumber.setVisible(false);
             evadLabel.setVisible(false);
-            reszLabel.setVisible(false);
         }
         else{
             seasonNumber.setVisible(true);
