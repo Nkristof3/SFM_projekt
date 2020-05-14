@@ -8,34 +8,34 @@
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="555.0" prefWidth="829.0" spacing="20.0" styleClass="body" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.Dreamteam.PrimaryController">
+<VBox alignment="CENTER" prefHeight="555.0" prefWidth="895.0" spacing="20.0" styleClass="body" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.Dreamteam.PrimaryController">
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>
    <children>
-      <Label alignment="TOP_CENTER" contentDisplay="RIGHT" prefHeight="26.0" prefWidth="324.0" text="Cím" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS">
+      <Label alignment="TOP_CENTER" contentDisplay="RIGHT" prefHeight="70.0" prefWidth="335.0" text="Watch&amp;Store" textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS">
          <font>
             <Font size="48.0" />
          </font>
       </Label>
       <AnchorPane prefHeight="405.0" prefWidth="790.0">
          <children>
-            <Button fx:id="kedvG" contentDisplay="BOTTOM" layoutX="570.0" layoutY="102.0" mnemonicParsing="false" onAction="#switchToKedvencek" prefHeight="39.0" prefWidth="198.0" styleClass="gomb" stylesheets="@style.css" text="Kedvencek" textFill="WHITE">
+            <Button fx:id="kedvG" contentDisplay="BOTTOM" layoutX="13.0" layoutY="183.0" mnemonicParsing="false" onAction="#switchToKedvencek" prefHeight="39.0" prefWidth="198.0" styleClass="gomb" stylesheets="@style.css" text="Kedvencek" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button layoutX="570.0" layoutY="163.0" mnemonicParsing="false" onAction="#switchToMegnezendo" prefHeight="39.0" prefWidth="198.0" styleClass="gomb" stylesheets="@style.css" text="Megnézendő" textFill="WHITE">
+            <Button layoutX="13.0" layoutY="244.0" mnemonicParsing="false" onAction="#switchToMegnezendo" prefHeight="39.0" prefWidth="198.0" styleClass="gomb" stylesheets="@style.css" text="Megnézendő" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button layoutX="570.0" layoutY="39.0" mnemonicParsing="false" onAction="#switchToSecondary" prefHeight="39.0" prefWidth="198.0" styleClass="gomb" stylesheets="@style.css" text="Összes" textFill="WHITE">
+            <Button layoutX="13.0" layoutY="124.0" mnemonicParsing="false" onAction="#switchToSecondary" prefHeight="39.0" prefWidth="198.0" styleClass="gomb" stylesheets="@style.css" text="Összes" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <MediaView fx:id="videoablak" fitHeight="240.0" fitWidth="426.0" layoutX="70.0" layoutY="63.0" />
+            <MediaView fx:id="videoablak" fitHeight="240.0" fitWidth="426.0" layoutX="428.0" layoutY="91.0" />
          </children>
       </AnchorPane>
    </children>

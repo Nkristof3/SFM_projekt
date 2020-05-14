@@ -6,15 +6,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="SFM_projekt5" />
+        <module name="SFM_projekt60" />
+        <module name="SFM_projekt2" />
+        <module name="SFM_projektuj" />
+        <module name="projekt" />
+        <module name="SFM_projekt4" />
         <module name="SFM_projekt3" />
         <module name="SFM_projekt" />
-        <module name="SFM_projektuj" />
-        <module name="SFM_projekt5" />
-        <module name="SFM_projekt4" />
-        <module name="projekt" />
-        <module name="SFM_projekt2" />
         <module name="sfm_projekt" />
-        <module name="SFM_projekt60" />
       </profile>
     </annotationProcessing>
   </component>
